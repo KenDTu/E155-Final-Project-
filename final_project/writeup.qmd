@@ -1,0 +1,40 @@
+---
+title: "Final Project Write Up"
+listing:
+  contents: writeup.qmd
+  sort: "date desc"
+  type: default
+  categories: false
+---
+
+<!-- This is how you write a comment in your .qmd file -->
+## Introduction
+
+In this lab, the E155 Microprocessor PCB was 
+
+## Design and Testing Methodology
+
+The on-board high-speed oscillator (HSOSC) from 
+
+## Technical Documentation
+
+The source code for the project can be found in the associated [Github repository](https://github.com/KenDTu/E155-Final-Project-).
+
+
+
+
+## Schematic
+
+<!-- ::: {.callout-note collapse="true"}
+## Figure 2: Lab 1 Schematic
+![Figure 2: Schematic diagram for the physical layout](images/schematic.jpeg)
+::: -->
+
+## Results and Discussion
+
+The design most of the intended design .
+
+### Testbench Simulation
+
+The design met the specifications for the seven segment, the counter, and the on-board LED logic.
+

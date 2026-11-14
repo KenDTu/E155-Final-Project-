@@ -17,8 +17,6 @@ about:
 
 Hey we're Ken and Ivan and this is our E155 Microprocessors Final Project.
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Check out our [Final Project](final_project/writeup.qmd)
 
 [Link to Github](https://github.com/KenDTu/E155-Final-Project-)
