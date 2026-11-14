@@ -7,6 +7,48 @@
     "text": "Week 1 Reflections - Ken\n\n\nSetting up what kinds of tasks need to be completed\n\n\n\n\n\nNov 14, 2026\n\n\nKen Tu\n\n\n\n\n\n\n\n\n\n\n\n\nHello Quarto\n\n\nWelcome to my Quarto portfolio\n\n\n\n\n\nAug 23, 2024\n\n\nJosh Brake\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "final_project/writeup.html",
+    "href": "final_project/writeup.html",
+    "title": "Final Project Write Up",
+    "section": "",
+    "text": "In this lab, the E155 Microprocessor PCB was"
+  },
+  {
+    "objectID": "final_project/writeup.html#introduction",
+    "href": "final_project/writeup.html#introduction",
+    "title": "Final Project Write Up",
+    "section": "",
+    "text": "In this lab, the E155 Microprocessor PCB was"
+  },
+  {
+    "objectID": "final_project/writeup.html#design-and-testing-methodology",
+    "href": "final_project/writeup.html#design-and-testing-methodology",
+    "title": "Final Project Write Up",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThe on-board high-speed oscillator (HSOSC) from"
+  },
+  {
+    "objectID": "final_project/writeup.html#technical-documentation",
+    "href": "final_project/writeup.html#technical-documentation",
+    "title": "Final Project Write Up",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\nThe source code for the project can be found in the associated Github repository."
+  },
+  {
+    "objectID": "final_project/writeup.html#schematic",
+    "href": "final_project/writeup.html#schematic",
+    "title": "Final Project Write Up",
+    "section": "Schematic",
+    "text": "Schematic"
+  },
+  {
+    "objectID": "final_project/writeup.html#results-and-discussion",
+    "href": "final_project/writeup.html#results-and-discussion",
+    "title": "Final Project Write Up",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nThe design most of the intended design .\n\nTestbench Simulation\nThe design met the specifications for the seven segment, the counter, and the on-board LED logic."
+  },
+  {
     "objectID": "posts/wk1reflections.html",
     "href": "posts/wk1reflections.html",
     "title": "Week 1 Reflections - Ken",
@@ -32,6 +74,6 @@
     "href": "index.html",
     "title": "E155 Final Project",
     "section": "",
-    "text": "Hey we’re Ken and Ivan and this is our E155 Microprocessors Final Project.\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nLink to Github"
+    "text": "Hey we’re Ken and Ivan and this is our E155 Microprocessors Final Project.\nCheck out our Final Project\nLink to Github"
   }
 ]
