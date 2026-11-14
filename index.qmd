@@ -17,8 +17,6 @@ about:
 
 Hey we're Ken and Ivan and this is our E155 Microprocessors Final Project.
 
-Check out our [Final Project](final_project/writeup.qmd)
-
-Please see our [Final Report Paper](finalreport.pdf)!
+Check out our [Final Project](writeup.qmd)
 
 [Link to Github](https://github.com/KenDTu/E155-Final-Project-)
