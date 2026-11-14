@@ -1,0 +1,24 @@
+---
+title: "E155 Final Project"
+image: images/headshot.png
+about:
+  template: jolla
+  links:
+    - icon: linkedin
+      text: Ivan's LinkedIn
+      href: https://www.linkedin.com/in/ivan-jimenez-pineda/
+    - icon: linkedin
+      text: Ken's LinkedIn
+      href: https://www.linkedin.com/in/kendtu/
+    - icon: github
+      text: Github
+      href: https://github.com/KenDTu/E155-Final-Project-
+---
+
+Hey we're Ken and Ivan and this is our E155 Microprocessors Final Project.
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+[Link to Github](https://github.com/KenDTu/E155-Final-Project-)
