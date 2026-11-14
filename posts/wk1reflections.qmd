@@ -1,0 +1,18 @@
+---
+title: "Week 1 Reflections - Ken"
+description: "Setting up what kinds of tasks need to be completed"
+author: "Ken Tu"
+date: "11/14/2026"
+categories:
+  - reflection
+  - labreport
+draft: false
+---
+
+## Summary 
+
+Summary of what was accomplished
+
+## Reflections on Final Project
+
+here are some reflections
