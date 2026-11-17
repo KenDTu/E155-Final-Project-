@@ -1,7 +1,7 @@
 // Author: Ken TU
 // Email: ktu@g.hmc.edu
 // Date of Creation: 11/16/2026
-// Counter divider to divide the 24MHz int_osc
+// Purpose: Counter divider to divide the 24MHz int_osc
 
 // counterWidth = 2^19 = 524,288 ≥ 400,000
 // clock math is 24MHz / 400,000 = 60Hz
