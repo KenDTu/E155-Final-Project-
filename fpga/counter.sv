@@ -8,7 +8,7 @@
 // WARNING: If the max is greater than the 2^{counterWidth-1}, then max is never reached.
 
 `timescale 1ns/1ps
-module counter #(parameter counterWidth = 18, parameter max = 249999) // Alter the counterWidth and max parameters
+module counter #(parameter counterWidth = 32, parameter max = 2147483645) // Alter the counterWidth and max parameters
 				 (input logic       clk,
 				  input logic       reset,
 				  input logic       enable,

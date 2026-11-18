@@ -9,21 +9,23 @@
 // Outputs the PWM signal to the X_enable, and [clockwise anticlockwise] pair 
 // to the [IN1 IN2], or [IN3 IN4] on the H-bridge
 module motorcontroller(
-  input logic enable,
-  input logic reset,
+  // input logic enable,
+  // input logic reset,
   //input logic [1:0] direction,   // which direction is the robot moving?
-  output logic alpha_enable,     // which wheel are we enabling?
+  output logic gamma_enable,     // which wheel are we enabling?
   output logic clockwise,        // when facing into the motor are we CW or ACW?
   output logic anticlockwise
 );
 
     // =========== HARD CODED VALUES from MCU ===========
-    logic [1:0] direction = 2'b00;
+    logic enable = 1'b1;
+    logic reset = 1'b0;
+    logic [1:0] direction = 2'b11;
 
     // ============== END OF HARD CODED VALUES =========
 
     // Value of the PWM to send to H-bridge
-    logic vPWM = 1'b0;
+    logic vPWM;
 
     // Peiod of the PWM signal expressed in clock cycles
     // multiply this value by the clock period to get the value in ns
@@ -44,16 +46,18 @@ module motorcontroller(
 
     // Instantiates counter to clock divide the internal clock
 
-    counter counter_alpha(.clk(int_osc), .reset(reset), .enable(enable));
+    counter counter_gamma(.clk(int_osc), .reset(reset), .enable(enable));
 
     // Activate the PWM by sending 0 or 1 to vPWM
-    always_ff @(posedge clk)
-      begin
-        if (pulseLength > counter)   vPWM <= 1'b1;
-        else                         vPWM <= 1'b0;
-      end
+    assign vPWM = (counter < pulseLength);
+    
+    // always_ff @(posedge clk)
+    //   begin
+    //     if (pulseLength > counter)   vPWM <= 1'b1;
+    //     else                         vPWM <= 1'b0;
+    //   end
 
-    assign alpha_enable = vPWM;
+    assign gamma_enable = vPWM;
 
     // Instantiating rotation_driver to provide direction on motor
     rotation_driver rotation_driver(.direction(direction), .clockwise(clockwise), .anticlockwise(anticlockwise));

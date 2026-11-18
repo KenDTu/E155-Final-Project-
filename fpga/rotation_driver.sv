@@ -6,18 +6,18 @@
 `timescale 1ns/1ps
 module rotation_driver(
   input logic [1:0] direction,
-  // input  logic wheel idk
+  // input  logic wheel, alpha, beta, gamma, delta idk
   output logic clockwise,
   output logic anticlockwise
 );
   // 
   // Requires an if statement to select the wheel because each wheel is different
     always_comb
-        case(direction)
+        case(direction) // SET to GAMMA 
             2'b00:  clockwise = 1'b0;
             2'b01:  clockwise = 1'b1;
-            2'b10:  clockwise = 1'b1;
-            2'b11:  clockwise = 1'b0;
+            2'b10:  clockwise = 1'b0;
+            2'b11:  clockwise = 1'b1;
             default: clockwise = 1'b0;
         endcase
   
