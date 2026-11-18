@@ -65,6 +65,23 @@ GPIO_TypeDef * gpioPinToBase(int gpio_pin) {
 }
 
 
+/* Selects the internal pull-up / pull-down resistor of a pin (PUPDR register).
+ *    -- setting: GPIO_PULL_UP, GPIO_PULL_DOWN, or GPIO_FLOATING */
+void pinResistor(int gpio_pin, int setting) {
+	GPIO_TypeDef * GPIO_PORT_PTR = gpioPinToBase(gpio_pin);
+	int pin_offset = gpioPinOffset(gpio_pin);
+
+	GPIO_PORT_PTR->PUPDR &= ~(0b11 << 2*pin_offset); // 00 = no pull
+	switch(setting) {
+		case GPIO_PULL_UP:
+			GPIO_PORT_PTR->PUPDR |= (0b01 << 2*pin_offset);
+			break;
+		case GPIO_PULL_DOWN:
+			GPIO_PORT_PTR->PUPDR |= (0b10 << 2*pin_offset);
+			break;
+	}
+}
+
 void pinMode(int gpio_pin, int function) {
 	// Get pointer to base address of the corresponding GPIO pin and pin offset
 	GPIO_TypeDef * GPIO_PORT_PTR = gpioPinToBase(gpio_pin);
