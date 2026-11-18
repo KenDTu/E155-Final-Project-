@@ -7,19 +7,21 @@
 `timescale 1ns/1ps
 
 // Instantiate Motor Controller for One Motor
-// Outputs the PWM signal to the X_enable, and [clockwise anticlockwise] pair 
+// Outputs the PWM signal to the X_enable, and provide each directions motor_vector i.e. which direction each wheel has to spin in order to translate in x-y 
 // to the [IN1 IN2], or [IN3 IN4] on the H-bridge
 module motorcontroller(
   input logic enable,
   input logic reset,
   //input logic [1:0] direction,   // which direction is the robot moving?
   output logic alpha_enable,     // which wheel are we enabling?
-  output logic clockwise,        // when facing into the motor are we CW or ACW?
-  output logic anticlockwise
+  output logic beta_enable,
+  output logic gamma_enable,
+  output logic delta_enable,
+  output logic [7:0] motor_vector // which wheels rotates in which direction -- alpha, beta, gamma, delta, CW ACW 4x
 );
 
     // =========== HARD CODED VALUES from MCU ===========
-    logic [1:0] direction = 2'b00;
+    logic [1:0] direction = 2'b11; // forward 00, backward 01, left 10, right 11
 
     // ============== END OF HARD CODED VALUES =========
 
@@ -44,19 +46,25 @@ module motorcontroller(
 		  hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
 
     // Instantiates counter to clock divide the internal clock
-
     counter counter_alpha(.clk(int_osc), .reset(reset), .enable(enable));
 
     // Activate the PWM by sending 0 or 1 to vPWM
-    always_ff @(posedge clk)
+    always_ff @(posedge int_osc) // TODO: the int_osc here needs to be changed to control the PWM
       begin
         if (pulseLength > counter)   vPWM <= 1'b1;
         else                         vPWM <= 1'b0;
       end
 
+    // Pushing PMW to enable pins on H-Bridge
     assign alpha_enable = vPWM;
+    assign beta_enable = vPWM;
+    assign gamma_enable = vPWM;
+    assign delta_enable = vPWM;
 
-    // Instantiating rotation_driver to provide direction on motor
-    rotation_driver rotation_driver(.direction(direction), .clockwise(clockwise), .anticlockwise(anticlockwise));
+    // Instantiating rotation_driver_[alpha,..., gamma] to provide direction on motor
+    rotation_driver_alpha rotation_driver_alpha(.direction(direction), .motor_vector(motor_vector[7:6]));
+    rotation_driver_beta rotation_driver_beta(.direction(direction), .motor_vector(motor_vector[5:4]));
+    rotation_driver_gamma rotation_driver_gamma(.direction(direction), .motor_vector(motor_vector[3:2]));
+    rotation_driver_delta rotation_driver_delta(.direction(direction), .motor_vector(motor_vector[1:0]));
 
 endmodule

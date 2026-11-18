@@ -22,4 +22,6 @@ module counter #(parameter counterWidth = 32, parameter max = 2147483645) // Alt
 			else if (counter == max)      counter <= 0;
 			else if (enable == 1)         counter <= counter + 1;
 		end
+
+    
 endmodule
