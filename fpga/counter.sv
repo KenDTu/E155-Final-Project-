@@ -1,3 +1,4 @@
+// counter.sv
 // Author: Ken TU
 // Email: ktu@g.hmc.edu
 // Date of Creation: 11/16/2026
