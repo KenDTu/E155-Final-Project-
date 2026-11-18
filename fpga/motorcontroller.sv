@@ -9,7 +9,6 @@
 // Outputs the PWM signal to the X_enable, and [clockwise anticlockwise] pair 
 // to the [IN1 IN2], or [IN3 IN4] on the H-bridge
 module motorcontroller(
-  input logic clk,
   input logic enable,
   input logic reset,
   //input logic [1:0] direction,   // which direction is the robot moving?
@@ -20,7 +19,6 @@ module motorcontroller(
 
     // =========== HARD CODED VALUES from MCU ===========
     logic [1:0] direction = 2'b00;
-
 
     // ============== END OF HARD CODED VALUES =========
 
@@ -56,5 +54,8 @@ module motorcontroller(
       end
 
     assign alpha_enable = vPWM;
-  
+
+    // Instantiating rotation_driver to provide direction on motor
+    rotation_driver rotation_driver(.direction(direction), .clockwise(clockwise), .anticlockwise(anticlockwise));
+
 endmodule

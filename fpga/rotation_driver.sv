@@ -3,8 +3,9 @@
 // Date of Creation: 11/18/2026
 // Purpose: Decides the rotation direction e.g. CW/ACW based on direction input
 
+`timescale 1ns/1ps
 module rotation_driver(
-  input  logic direction,
+  input logic [1:0] direction,
   // input  logic wheel idk
   output logic clockwise,
   output logic anticlockwise
@@ -17,9 +18,9 @@ module rotation_driver(
             2'b01:  clockwise = 1'b1;
             2'b10:  clockwise = 1'b1;
             2'b11:  clockwise = 1'b0;
-            default: clockwise = 1'b0
+            default: clockwise = 1'b0;
         endcase
-
+  
     assign anticlockwise = ~clockwise;
 
 endmodule
